@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-02T02:53:02.738Z",
+    "end": "2023-05-02T02:53:21.629Z",
+    "duration": 18891,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "725dd993-c8f1-4818-be6c-d890f85ac90e",
+      "title": "",
+      "fullFile": "cypress/e2e/firstTest.cy.js",
+      "file": "cypress/e2e/firstTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "571a51ad-8f4d-4643-9474-220e672e92cb",
+          "title": "Amazon Product",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should verify buy now button is present",
+              "fullTitle": "Amazon Product should verify buy now button is present",
+              "timedOut": null,
+              "duration": 16589,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#twotabsearchtextbox').type('laptop');\ncy.get('#nav-search-submit-button').click();\ncy.get('[data-component-type=\"s-search-result\"]').first().find('h2 > a').then($link => {\n  const href = $link.prop('href');\n  cy.visit(href);\n  cy.window().then(win => {\n    cy.stub(win, 'open').as('windowOpen');\n  });\n  cy.get('span[id=\"submit.buy-now-announce\"]', {\n    timeout: 60000\n  }).should('be.visible');\n});",
+              "err": {},
+              "uuid": "9f21add7-88bd-4a6e-9b85-682efac4fb6a",
+              "parentUUID": "571a51ad-8f4d-4643-9474-220e672e92cb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f21add7-88bd-4a6e-9b85-682efac4fb6a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16589,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
