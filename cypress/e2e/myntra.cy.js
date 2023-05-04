@@ -6,7 +6,8 @@ describe('Myntra', () => {
         headers: {
           "Accept-Encoding": "gzip, deflate, br"
         }
-      })
+      },
+      {continueAfter: 5000})
     })
   
     it('should search for product', () => {
